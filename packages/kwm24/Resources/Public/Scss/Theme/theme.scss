@@ -43,6 +43,25 @@ figure img, figure picture {
 .btn-primary:hover {
   background-color: black;
 }
+.header-language {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.footer-language {
+  text-align: center;
+}
+
+  .header-language {
+    display: none; /* Versteckt die Header-Sprachauswahl bei kleinen Bildschirmen */
+    border:blue;
+  }
+
+  .footer-language {
+    display: block; /* Zeigt die Sprachauswahl in der Navigation */
+  }
+
 
 
 
