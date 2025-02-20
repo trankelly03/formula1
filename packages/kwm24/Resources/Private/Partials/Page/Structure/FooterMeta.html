@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/cy-grotesk-grand" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'CY Grotesk Grand', sans-serif;
+            margin: 0;
+            background-color: #fff;
+        }
+
+        .footer {
+            background-color: #fff;
+            color: #000;
+            display: flex;
+            justify-content: space-around; /* Elemente gleichmäßig verteilen */
+            align-items: center;
+            padding: 10px 80px; /* Breite bleibt voll, aber weniger Abstand */
+            border-top: 3px solid black; /* Dünne schwarze Trennlinie */
+            width: 100%;
+        }
+
+        .logo-contact {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Weniger Abstand zwischen Logo & Kontakt */
+        }
+
+        .logo img {
+            height: 30px !important; /* Kleinere Logo-Größe */
+            margin-right: 30px !important; /* Kleinere Logo-Größe */
+        }
+
+        .contact {
+            font-size: 14px; /* Kleinere Schrift */
+            gap: 2px;
+            font-weight: lighter;
+        }
+
+        .about {
+            max-width: 220px;
+            font-size: 14px;
+            font-weight: lighter;
+        }
+
+        .about h3 {
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        .social-media {
+            display: flex;
+            gap: 8px; /* Weniger Abstand */
+        }
+
+        .social-media a {
+            color: black;
+            font-size: 18px; /* Kleinere Icons */
+            text-decoration: none;
+        }
+
+        .social-media a:hover {
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+
+<footer class="footer">
+    <!-- Logo & Kontakt -->
+    <div class="logo-contact">
+        <div class="logo">
+            <img src="http://formel1.s2310456024.student.kwmhgb.at/fileadmin/user_upload/f1-logo.png" alt="F1 Logo">
+        </div>
+        <div class="contact">
+            <p><i class="fa fa-phone"></i> +43 699 18320598</p>
+            <p><i class="fa fa-envelope"></i> kellytran300@gmail.com</p>
+        </div>
+    </div>
+
+    <!-- About Us -->
+    <div class="about">
+        <h3>About us</h3>
+        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</p>
+    </div>
+
+    <!-- Social Media Icons -->
+    <div class="social-media">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+.card-group-element {
+  display: flex;
+  flex-wrap: wrap; /* Falls die Karten umbrechen sollen */
+  justify-content: center; /* Karten zentrieren */
+  gap: 30px; /* Abstand zwischen den Karten */
+}
+
+
+.card-group-element-item {
+  flex: 1 1 calc(33.333% - 20px); /* Drei Karten nebeneinander */
+  max-width: 30%;
+  min-width: 300px; /* Mindestbreite für Responsiveness */
+  box-sizing: border-box; /* Stellt sicher, dass Padding mitgerechnet wird */
+}
+
+.card-group-element-columns-3 .card-group-element-item {
+  flex: 1 1 calc(33.333% - 20px); /* Drei Karten nebeneinander */
+  max-width: 30%;
+  min-width: 300px;
+}
+
+.card {
+  width: 100%;
+  border-radius: 0;
+}

@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'Cy Grotesk Grand';
+  src: url('/Users/kellytran/PhpstormProjects/formel1/packages/kwm24/Resources/Public/Fonts/cy-grotesk-grand.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Überschriften fett, unterstrichen & mit neuer Schrift */
+.textpic-text h1,
+.textpic-text h2 {
+  font-family: 'Cy Grotesk Grand', 'Arial Black',  sans-serif;
+  font-weight: 900;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+.element-header  {
+  font-family: 'Cy Grotesk Grand', 'Arial Black',  sans-serif;
+  font-weight: 900;
+  text-decoration: underline;
+  text-transform: uppercase;
+}

@@ -1,0 +1,207 @@
+//
+// Variables
+//
+@import "variables";
+
+//
+// Import needed Bootstrap Package Files
+//
+@import "EXT:bootstrap_package/Resources/Public/Scss/bootstrap5/theme";
+
+@import "main_card";
+@import "fonts";
+
+
+#page-header {
+  display: flex;
+  align-items: center;
+  padding-left: 0px; // Navigation bleibt ganz links
+  justify-content: flex-start;
+  width: 100%;
+}
+
+#mainnavigation {
+  background-color: transparent;
+  width: 100%;
+
+  @font-face {
+    font-family: 'CY Grotesk Grand';
+    src: url('/Users/kellytran/PhpstormProjects/formel1/packages/kwm24/Resources/Public/Fonts/cy-grotesk-grand.woff') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5px 10px; // Weniger Padding für eine kompaktere Navigation
+    width: 100%;
+  }
+
+
+
+  .container-mainnavigation {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  .navbar-nav {
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px; // Weniger Abstand zwischen den Buttons
+    padding: 5px 0;
+  }
+
+  .nav-item {
+    list-style: none;
+  }
+
+  .nav-link {
+    font-family: 'Cy Grotesk Grand', 'Arial Light',  sans-serif;
+    font-size: 12px; // Schriftgröße etwas reduziert
+    font-weight: lighter;
+    text-align: center;
+    text-decoration: none !important;
+    color: white;
+    background-color: red;
+    padding: 8px 20px; // Kleinere Buttons durch weniger Padding
+    border-radius: 15px; // Weniger Rundung für eine schmalere Optik
+    transition: all 0.3s ease-in-out;
+    min-width: 120px; // Kleinere Button-Breite
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px; // Kleinere Button-Höhe
+  }
+
+  .nav-link-main::before,
+  .nav-link-main:hover::before,
+  .nav-link-main.active::before {
+    content: none !important;
+    display: none !important;
+  }
+
+  .nav-link:hover, .nav-item.active .nav-link {
+    background-color: black;
+    color: white;
+  }
+
+  // F1-Logo Styling (leicht verkleinert)
+  .navbar-mainnavigation .navbar-brand-image img {
+    max-height: 80px !important; // Logo leicht verkleinert
+    width: auto !important;
+    padding: 3px 8px !important;
+    display: block !important;
+  }
+
+  // Sprache-Dropdown rechts
+  .language-selector {
+    margin-left: 10px;
+  }
+
+  /* ===============================
+   RESPONSIVE DESIGN
+   =============================== */
+
+  // Für Tablets (max. 992px)
+  @media (max-width: 992px) {
+    .navbar {
+      flex-direction: column;
+      padding: 5px;
+    }
+
+    .navbar-nav {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .nav-link {
+      font-size: 10px;
+      padding: 8px 15px;
+      min-width: 100px;
+      height: 35px;
+    }
+
+    .navbar-mainnavigation .navbar-brand-image img {
+      max-height: 60px !important;
+    }
+  }
+
+  // Für Smartphones (max. 768px)
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .navbar-nav {
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .nav-link {
+      font-size: 10px;
+      padding: 6px 12px;
+      min-width: 90px;
+      height: 30px;
+    }
+
+    .navbar-mainnavigation .navbar-brand-image img {
+      max-height: 40px !important;
+    }
+  }
+
+  // Für extra kleine Geräte (max. 576px)
+  @media (max-width: 576px) {
+    .nav-link {
+      font-size: 9px;
+      padding: 5px 10px;
+      min-width: 80px;
+      height: 25px;
+    }
+
+    .navbar-mainnavigation .navbar-brand-image img {
+      max-height: 30px !important;
+    }
+  }
+}
+#c55 img {
+  max-width: 100%; /* Oder eine andere gewünschte Größe */
+  height: auto;
+}
+figure img, figure picture {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+#c55 {
+  display: grid;
+  align-items: center; /* Vertikal mittig */
+  justify-content: center; /* Horizontal mittig */
+  gap: 5px; /* Weniger Abstand zwischen den Spalten */
+}
+
+.textmedia, .textpic {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
