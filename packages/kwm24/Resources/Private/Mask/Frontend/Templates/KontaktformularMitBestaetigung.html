@@ -1,0 +1,27 @@
+<f:if condition="{data.tx_mask_popup_message}">
+    <div id="popupMessage" class="popup hidden">
+        <p>{data.tx_mask_popup_message -> f:format.html()}</p>
+        <button id="closePopup">OK</button>
+    </div>
+</f:if>
+<f:if condition="{TSFE:id} == 24">
+    <script src="{f:uri.resource(path: 'JavaScript/popup.js')}"></script>
+</f:if>
+
+
+<!-- Formular um den Absende-Button -->
+<form id="contactForm" action="### DEIN FORMULAR ACTION URL ###" method="POST">
+    <div id="{data.tx_mask_submit_button}" class="submit-button">
+        <button type="button" id="submitButton">Absenden</button>
+    </div>
+</form>
+
+<f:variable name="agreement" value="{data.tx_mask_agreement}"/>
+<f:if condition="{agreement}">
+    <f:then>
+        <p>Danke, dass du zugestimmt hast!</p>
+    </f:then>
+    <f:else>
+        <p>Bitte stimme den Bedingungen zu.</p>
+    </f:else>
+</f:if>

@@ -23,3 +23,20 @@
   width: 100%;
   border-radius: 0;
 }
+
+
+.card a:not(.btn) {
+  color: #ee0000;
+}
+
+.card a:not(.btn):hover {
+  color: black;
+}
+.card-title {
+  font-family: 'Cy Grotesk Grand', 'Arial Black',  sans-serif;
+  font-weight: 900;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+
