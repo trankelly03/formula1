@@ -4,35 +4,83 @@
 <f:variable name="headerClass">{headerClass}{f:if(condition: logo.normal, then:' navbar-has-image')}</f:variable>
 <f:variable name="headerClass">{headerClass}{f:if(condition: theme.navigation.type, else:' navbar-top', then:' navbar-{theme.navigation.type} navbar-fixed-{theme.navigation.type}')}</f:variable>
 
+<style>
+    /* Styling für das Sprach-Dropdown-Menü */
+    #languageDropdown + .dropdown-menu {
+        background-color: #ffffff; /* Weißer Hintergrund */
+    }
+
+    #languageDropdown + .dropdown-menu .dropdown-item {
+        color: #000000; /* Textfarbe schwarz */
+    }
+
+    #languageDropdown + .dropdown-menu .dropdown-item.active,
+    #languageDropdown + .dropdown-menu .dropdown-item:hover,
+    #languageDropdown + .dropdown-menu .dropdown-item:focus {
+        background-color: #000000; /* Aktives oder gehovertes Element schwarz */
+        color: #ffffff; /* Textfarbe weiß im aktiven Zustand */
+    }
+</style>
+
 <header id="page-header" class="{headerClass}">
-    <div class="container container-mainnavigation d-flex justify-content-between align-items-center">
-        <!-- Linke Seite: Logo -->
+    <div class="container container-mainnavigation">
         <f:render partial="Header/Logo" arguments="{_all}" />
 
-        <!-- Mittlere Seite: Hauptnavigation -->
         <f:if condition="{mainnavigation}">
             <f:render partial="Header/Toggle" arguments="{_all}" />
+
             <nav aria-label="{f:translate(key: 'main-navigation.label', extensionName: 'bootstrap_package')}" id="mainnavigation" class="collapse navbar-collapse">
                 <f:render partial="DropIn/Navigation/MainBefore" arguments="{_all}" />
-                <f:render partial="Navigation/MainNavigation" arguments="{_all}" />
-                <f:render partial="DropIn/Navigation/MainAfter" arguments="{_all}" />
 
-                <!-- Sprachauswahl für kleinere Bildschirme (unter 991px) -->
-                <f:if condition="{theme.language.enable}">
-                    <div class="footer-language d-block d-lg-none">
-                        <f:render partial="Navigation/Language" arguments="{_all}" />
+                <!-- Hauptnavigation OHNE Sprachseiten -->
+                <ul class="navbar-nav me-auto">
+                    <f:for each="{mainnavigation}" as="item">
+                        <!-- Sprachseiten ausfiltern (z.B. doktype = 4 oder eigene UID wenn bekannt) -->
+                        <f:if condition="{item.doktype} != 4">
+                            <li class="nav-item">
+                                <a href="{item.link}" class="nav-link {f:if(condition: item.active, then: 'active')}">
+                                    {item.title}
+                                </a>
+                            </li>
+                        </f:if>
+                    </f:for>
+                </ul>
+
+                <!-- Sprach Dropdown -->
+                <f:if condition="{languagenavigation}">
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <f:for each="{languagenavigation}" as="item">
+                                <f:if condition="{item.active}">
+                                    {item.navigationTitle}
+                                </f:if>
+                            </f:for>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                            <f:for each="{languagenavigation}" as="item">
+                                <f:if condition="{item.available}">
+                                    <f:then>
+                                        <li>
+                                            <a class="dropdown-item {f:if(condition: item.active, then: 'active')}" href="{item.link}" hreflang="{item.hreflang}" title="{item.title}">
+                                                {item.navigationTitle}
+                                            </a>
+                                        </li>
+                                    </f:then>
+                                    <f:else>
+                                        <li>
+                                            <span class="dropdown-item disabled">{item.navigationTitle}</span>
+                                        </li>
+                                    </f:else>
+                                </f:if>
+                            </f:for>
+                        </ul>
                     </div>
                 </f:if>
+                <!-- Sprach Dropdown Ende -->
+
+                <f:render partial="DropIn/Navigation/MainAfter" arguments="{_all}" />
             </nav>
         </f:if>
-
-        <!-- Sprachauswahl für größere Bildschirme (ab 992px) -->
-        <f:if condition="{theme.language.enable}">
-            <div class="header-language d-none d-lg-flex" style="margin-left: auto;">
-                <f:render partial="Navigation/Language" arguments="{_all}" />
-            </div>
-        </f:if>
-
     </div>
 </header>
 

@@ -44,7 +44,9 @@
 		"jweiland/sync-crop-areas": "^3.0",
 		"fh-hagenberg/kwm24": "dev-main",
 		"mask/mask": "^8",
-		"georgringer/news": "11"
+		"georgringer/news": "11",
+		"derhansen/sf_event_mgt": "7.7.0"
+
 
 	},
 	"repositories": [

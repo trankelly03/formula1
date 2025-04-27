@@ -7,37 +7,64 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.cdnfonts.com/css/cy-grotesk-grand" rel="stylesheet">
     <style>
-        body {
-            font-family: 'CY Grotesk Grand', sans-serif;
+        html, body {
             margin: 0;
+            padding: 0;
+            height: 50%;
+            font-family: 'CY Grotesk Grand', sans-serif;
             background-color: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            flex: 1; /* Inhalt nimmt möglichst viel Platz ein */
         }
 
         .footer {
             background-color: #fff;
             color: #000;
             display: flex;
-            justify-content: space-around; /* Elemente gleichmäßig verteilen */
+            justify-content: space-around;
             align-items: center;
-            padding: 10px 80px; /* Breite bleibt voll, aber weniger Abstand */
-            border-top: 3px solid black; /* Dünne schwarze Trennlinie */
+            padding: 20px 80px;
+            border-top: 3px solid black;
             width: 100%;
+            min-height: 50px
+
+
+
+
+
+
+
+
+
+
+
+
+        ;
         }
 
         .logo-contact {
             display: flex;
             align-items: center;
-            gap: 15px; /* Weniger Abstand zwischen Logo & Kontakt */
+            gap: 15px;
         }
 
         .logo img {
-            height: 30px !important; /* Kleinere Logo-Größe */
-            margin-right: 30px !important; /* Kleinere Logo-Größe */
+            height: 30px;
+            margin-right: 30px;
         }
 
         .contact {
-            font-size: 14px; /* Kleinere Schrift */
-            gap: 2px;
+            font-size: 14px;
             font-weight: lighter;
         }
 
@@ -55,12 +82,12 @@
 
         .social-media {
             display: flex;
-            gap: 8px; /* Weniger Abstand */
+            gap: 8px;
         }
 
         .social-media a {
             color: black;
-            font-size: 18px; /* Kleinere Icons */
+            font-size: 18px;
             text-decoration: none;
         }
 
@@ -71,32 +98,35 @@
 </head>
 <body>
 
-<footer class="footer">
-    <!-- Logo & Kontakt -->
-    <div class="logo-contact">
-        <div class="logo">
-            <img src="http://formel1.s2310456024.student.kwmhgb.at/fileadmin/user_upload/f1-logo.png" alt="F1 Logo">
-        </div>
-        <div class="contact">
-            <p><i class="fa fa-phone"></i> +44 871 2202200</p>
-            <p><i class="fa fa-envelope"></i>  info@f1experiences.com </p>
-        </div>
-    </div>
+<div class="wrapper">
+    <main class="content">
+        <!-- Hier kommt dein Logout-Formular rein -->
+    </main>
 
-    <!-- About Us -->
-    <div class="about">
-        <h3>About us</h3>
-        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</p>
-    </div>
+    <footer class="footer">
+        <div class="logo-contact">
+            <div class="logo">
+                <img src="http://formel1.s2310456024.student.kwmhgb.at/fileadmin/user_upload/f1-logo.png" alt="F1 Logo">
+            </div>
+            <div class="contact">
+                <p><i class="fa fa-phone"></i> +44 871 2202200</p>
+                <p><i class="fa fa-envelope"></i> info@f1experiences.com </p>
+            </div>
+        </div>
 
-    <!-- Social Media Icons -->
-    <div class="social-media">
-        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#"><i class="fa-brands fa-youtube"></i></a>
-    </div>
-</footer>
+        <div class="about">
+            <h3>About us</h3>
+            <p>Die Formel 1 begeistert seit 1950 mit Geschwindigkeit, Innovation und legendären Fahrern auf der ganzen Welt.</p>
+        </div>
+
+        <div class="social-media">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+    </footer>
+</div>
 
 </body>
 </html>

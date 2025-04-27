@@ -1,0 +1,102 @@
+/* Reset nur für den Body */
+
+@font-face {
+  font-family: 'CY Grotesk Grand';
+  src: url('packages/kwm24/Resources/Public/Fonts/cy-grotesk-grand.woff') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  background: white;
+}
+
+legend {
+  font-family: 'Cy Grotesk Grand', 'Arial Black',  sans-serif;
+}
+
+/* Nur das Fieldset stylen */
+fieldset {
+  border: none;
+  margin: 50px 0 0 80px; /* Abstand links */
+  padding: 0;
+  width: 90%;
+  max-width: 600px;
+  text-align: left; /* Nur das Formular linksbündig */
+}
+
+/* Überschrift nur im Fieldset */
+fieldset legend {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+/* Labels im Formular */
+fieldset label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+/* Eingabefelder */
+fieldset input[type="text"],
+fieldset input[type="password"] {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+/* Checkbox im Formular */
+fieldset input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* Submit-Button */
+fieldset input[type="submit"] {
+  background-color: #d32d1e;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: background-color 0.3s;
+}
+
+fieldset input[type="submit"]:hover {
+  background-color: #b52618;
+}
+
+/* Versteckte Felder */
+.felogin-hidden {
+  display: none;
+}
+
+/* Texte nur innerhalb des Formulars linksbündig */
+fieldset h3,
+fieldset p {
+  text-align: left;
+  margin: 20px 0;
+}
+
+/* Passwort vergessen Link */
+fieldset a {
+  display: block;
+  text-align: left;
+  margin-top: 20px;
+  color: #d32d1e;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+fieldset a:hover {
+  text-decoration: underline;
+}

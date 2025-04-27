@@ -1,0 +1,14 @@
+<div class="event-list-item">
+    <div class="event-left">
+        <div class="event-content">
+            <h2 class="event-title">{event.title}</h2>
+            <p class="event-date">Datum: <f:format.date format="d. F Y">{event.startdate}</f:format.date></p>
+            <p class="event-track">Strecke: {event.location.title}</p>
+        </div>
+    </div>
+    <f:if condition="{event.image}">
+        <div class="event-image">
+            <f:image image="{event.image.0}" width="120" />
+        </div>
+    </f:if>
+</div>

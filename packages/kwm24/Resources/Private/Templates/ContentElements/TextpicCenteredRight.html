@@ -10,19 +10,49 @@
     <bk2k:data.imageVariants as="variants" variants="{variants}" multiplier="{imageConfig.multiplier}"
                              gutters="{imageConfig.gutters}" corrections="{imageConfig.corrections}" />
 
-    <!-- Styles für die Schriftart -->
-
-
-
-    <div class="textpic textpic-centered textpic-right">
-        <div class="textpic-item textpic-gallery">
-            <f:render partial="Media/Gallery" arguments="{_all}" />
-        </div>
-        <div class="textpic-item textpic-text">
+    <!-- Flex-Container für Text und Bild -->
+    <div class="flex-container">
+        <div class="text-content">
             <f:render partial="Header/All" arguments="{_all}" />
             <f:format.html>{data.bodytext}</f:format.html>
         </div>
+        <div class="image-content">
+            <f:render partial="Media/Gallery" arguments="{_all}" />
+        </div>
     </div>
+
+
+    <!-- Direktes CSS -->
+    <style>
+        .flex-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem;
+            flex-wrap: wrap; /* Für kleinere Bildschirme */
+        }
+        .text-content {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            text-align: left;
+        }
+        .image-content {
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+            text-align: center;
+        }
+        .image-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .text-content h2, .text-content p {
+            margin-bottom: 1rem;
+        }
+    </style>
 
 </f:section>
 </html>

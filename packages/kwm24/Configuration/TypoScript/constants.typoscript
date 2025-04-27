@@ -38,6 +38,10 @@ plugin.bootstrap_package {
     }
 }
 
+plugin.tx_news.view.twb5.templateRootPath = EXT:kwm24/Resources/Private/Templates/News
+plugin.tx_news.view.twb5.partialRootPath = EXT:kwm24/Resources/Private/Partials/News
+plugin.tx_news.view.twb5.layoutRootPath = EXT:kwm24/Resources/Private/Layouts/News
+
 
 ########################
 ### CONTENT ELEMENTS ###
@@ -64,7 +68,9 @@ plugin.tx_news. view. twb5. templateRootPath = EXT: kwm24/Resources/Private/Temp
 plugin.tx_news.view. twb5.partialRootPath = EXT: km24/Resources/Private/Partials/News
 plugin.tx_news.view. twb5. layoutRootPath = EXT: kwm24/Resources/Private/Layouts/News
 
-layoutRootPath = EXT:kwm24/Resources/Private/Layouts/LoginExt/
-partialRootPath = EXT:kwm24/Resources/Private/Partials/LoginExt/
+
 plugin.tx_felogin_login.view.templateRootPath = EXT:kwm24/Resources/Private/Templates/LoginExt/
+plugin.tx_felogin_login.view.partialRootPath= EXT:kwm24/Resources/Private/Partials/LoginExt/
+plugin.tx_felogin_login.view.layoutRootPath = EXT:kwm24/Resources/Private/Layouts/LoginExt/
+
 

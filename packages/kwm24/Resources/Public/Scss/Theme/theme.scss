@@ -11,7 +11,11 @@
 @import "card";
 @import "fonts";
 @import "navigation";
-@import "table";
+@import "detail";
+@import "eventlist";
+@import "driverstandings";
+@import "login";
+@import "logout";
 
 #c55 img {
   max-width: 100%; /* Oder eine andere gewünschte Größe */
@@ -61,6 +65,8 @@ figure img, figure picture {
   .footer-language {
     display: block; /* Zeigt die Sprachauswahl in der Navigation */
   }
+
+
 
 
 

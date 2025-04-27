@@ -11,6 +11,8 @@
 page {
     includeCSS {
         theme = EXT:kwm24/Resources/Public/Scss/Theme/theme.scss
+        swiper = EXT:kwm24/Resources/Public/Css/swiper-bundle.min.css
+        #https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css
     }
 
     includeJSLibs {
@@ -23,10 +25,14 @@ page {
 
     includeJSFooterlibs {
 
+
     }
 
     includeJSFooter {
+        swiper =EXT:kwm24/Resources/Public/JavaScript/Dist/swiper-bundle.min.js
+        #https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js
         kwm24_scripts = EXT:kwm24/Resources/Public/JavaScript/Dist/scripts.js
+
     }
     lib.maskContentElement {
         templateRootPaths {

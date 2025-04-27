@@ -1,0 +1,25 @@
+.driver-standings {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 20px;
+}
+
+.driver-row {
+  display: flex;
+  gap: 30px;
+}
+
+.driver {
+  text-align: center;
+}
+
+.driver .position {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.driver img {
+  border-radius: 10px;
+  margin-top: 10px;
+}
