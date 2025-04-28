@@ -1,0 +1,134 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+
+    <style>
+        .table-responsive {
+            margin: 2rem auto;
+            max-width: 1200px;
+            display: flex;
+            align-items: center;
+        }
+
+        .position-column {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-right: 5px;
+        }
+
+        .position {
+            background: #000;
+            color: #fff;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        table.table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 10px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        table.table th,
+        table.table td {
+            background: #e5e5e5;
+            padding: 14px 12px;
+            text-align: center;
+            font-weight: bold;
+            color: #111;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        /* Hier wichtig: Alle td innerhalb von hoverndem tr ansprechen! */
+        table.table tbody tr:hover td {
+            background-color: #b0b0b0; /* dunkleres Grau */
+            transform: scale(1.03); /* Vergrößern */
+        }
+
+        /* Abrundungen */
+        table.table tbody tr:first-child td:first-child {
+            border-top-left-radius: 20px;
+        }
+        table.table tbody tr:first-child td:last-child {
+            border-top-right-radius: 20px;
+        }
+        table.table tbody tr:last-child td:first-child {
+            border-bottom-left-radius: 20px;
+        }
+        table.table tbody tr:last-child td:last-child {
+            border-bottom-right-radius: 20px;
+        }
+
+        body {
+            background: #fff;
+        }
+    </style>
+
+
+    <f:if condition="{table}">
+        <div class="table-responsive">
+            <table class="table{f:if(condition: data.table_class, then: ' table-{data.table_class}')}">
+                <f:if condition="{data.table_caption}">
+                    <caption>{data.table_caption}</caption>
+                </f:if>
+                <f:for each="{table}" as="row" iteration="rowIterator">
+                    <f:if condition="{rowIterator.isFirst}">
+                        <f:then>
+                            <f:if condition="{data.table_header_position} == 1">
+                                <f:then>
+                                    <thead>
+                                </f:then>
+                                <f:else>
+                                    <tbody>
+                                </f:else>
+                            </f:if>
+                        </f:then>
+                        <f:else>
+                            <f:if condition="{rowIterator.isLast}">
+                                <f:if condition="{data.table_tfoot}">
+                                    </tbody>
+                                    <tfoot>
+                                </f:if>
+                            </f:if>
+                        </f:else>
+                    </f:if>
+                    <tr>
+                        <f:for each="{row}" as="cell" iteration="columnIterator">
+                            <f:render partial="Table/Columns" arguments="{_all}" />
+                        </f:for>
+                    </tr>
+                    <f:if condition="{rowIterator.isFirst}">
+                        <f:then>
+                            <f:if condition="{data.table_header_position} == 1">
+                                </thead>
+                                <tbody>
+                            </f:if>
+                        </f:then>
+                        <f:else>
+                            <f:if condition="{rowIterator.isLast}">
+                                <f:if condition="{data.table_tfoot}">
+                                    <f:then>
+                                        </tfoot>
+                                    </f:then>
+                                    <f:else>
+                                        </tbody>
+                                    </f:else>
+                                </f:if>
+                            </f:if>
+                        </f:else>
+                    </f:if>
+                </f:for>
+            </table>
+        </div>
+    </f:if>
+
+</f:section>
+</html>
